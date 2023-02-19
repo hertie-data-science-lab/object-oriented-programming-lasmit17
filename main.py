@@ -6,9 +6,17 @@ Created on Sun Feb 12 18:05:41 2023
 """
 
 from River import River
+from Creatures import Bear
+from Creatures import Fish
 
-river = River(5)
-river.initialize()
-river.display()
+#Creating the river ecosystem
+river = River(40)
 
-river.next_time_step(10)
+#Let's add the animals!
+for i in range(5):
+    river.populate_river(Bear())
+    river.populate_river(Fish())
+
+#Runs the simulation a preselected number of times
+river.next_time_step(20)
+
